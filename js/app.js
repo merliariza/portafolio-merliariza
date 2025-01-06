@@ -23,3 +23,11 @@ startButton.addEventListener('click', () => {
     mainContent.style.display = 'block';
   }, 500); 
 });
+
+// Función para alternar el menú (si lo necesitas)
+function toggleMenu() {
+    const menu = document.querySelector('.navbar-menu');
+    menu.classList.toggle('active');
+  }
+  
+  
