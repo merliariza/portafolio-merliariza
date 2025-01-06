@@ -367,3 +367,23 @@ body, html {
     transform: translateZ(0) scale(1.4);
   }
 }
+
+/*Animation: video to content*/
+.main-content {
+    display: none; 
+    opacity: 0; 
+    animation: fadeIn 1s ease forwards; 
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  /*Contact me design*/
+  .contact-icon-design{
+    position: absolute;
+    bottom: 10px;
+    right: 5vh;
+  }
+  
