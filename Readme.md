@@ -1,4 +1,4 @@
-# Developer Portfolio - Merli Ariza
+# Portfolio - Merli Ariza
 https://merliariza.github.io/portafolio-merliariza/
 
 ## Description
