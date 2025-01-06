@@ -597,3 +597,55 @@ section {
     padding: 30px;
   }
 }
+
+
+#misproyectos {
+  background-color: #e0ffff; 
+}
+
+
+.misproyectos-image {
+  width: 30%; 
+  height: auto;
+}
+
+.misproyectos-container {
+  display: flex;                
+  justify-content: center;     
+  align-items: center;           
+  box-sizing: border-box;
+}
+
+.misproyectos-image--slides {
+  width: 100%; 
+  height: 100%;
+}
+
+
+@media (max-width: 768px) {
+  .misproyectos-container {
+    flex-direction: column; 
+    text-align: center; 
+  }
+
+  .misproyectos-image {
+    width: 50%;
+    padding-top: 30px;
+  }
+}
+
+#contactame {
+  background-color: #e0ffff; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Scrollbar styling */
+body {
+  scroll-behavior: smooth;
+}
+
+.navbar-menu a {
+  margin-right: 20px;
+}
