@@ -1,0 +1,40 @@
+
+@import url('https://fonts.cdnfonts.com/css/arcade-classic');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Press+Start+2P&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Press+Start+2P&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+/*Font style for titles*/
+h1,h2 {
+    font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #5896aa;
+    font-size: 2rem;
+    text-align: justify;
+}
+/*Font style for content*/
+p{
+    font-family: "Roboto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 3rem;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "GRAD" 0;
+      text-align: justify;
+  }
+/*Font size for content*/
+p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/*Font style for nav-title*/
+.nav-font--style {
+    font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #ffffff;
+    font-size: 1.5rem;
+    text-align: justify;
+}
