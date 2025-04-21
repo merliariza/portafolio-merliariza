@@ -28,8 +28,6 @@ gdjs.MerliCode.GDInicio2Objects1= [];
 gdjs.MerliCode.GDInicio2Objects2= [];
 gdjs.MerliCode.GDdoorObjects1= [];
 gdjs.MerliCode.GDdoorObjects2= [];
-gdjs.MerliCode.GDTransparentDarkJoystickObjects1= [];
-gdjs.MerliCode.GDTransparentDarkJoystickObjects2= [];
 gdjs.MerliCode.GDMerObjects1= [];
 gdjs.MerliCode.GDMerObjects2= [];
 gdjs.MerliCode.GDmuseum_9595floorObjects1= [];
@@ -50,8 +48,10 @@ gdjs.MerliCode.GDtextframeObjects1= [];
 gdjs.MerliCode.GDtextframeObjects2= [];
 gdjs.MerliCode.GDarrowObjects1= [];
 gdjs.MerliCode.GDarrowObjects2= [];
-gdjs.MerliCode.GDTransparentLightJoystickObjects1= [];
-gdjs.MerliCode.GDTransparentLightJoystickObjects2= [];
+gdjs.MerliCode.GDLineLightJoystickObjects1= [];
+gdjs.MerliCode.GDLineLightJoystickObjects2= [];
+gdjs.MerliCode.GDgeneral_9595wall2Objects1= [];
+gdjs.MerliCode.GDgeneral_9595wall2Objects2= [];
 
 
 gdjs.MerliCode.mapOfGDgdjs_9546MerliCode_9546GDMerObjects1Objects = Hashtable.newFrom({"Mer": gdjs.MerliCode.GDMerObjects1});
@@ -271,10 +271,6 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.MerliCode.mapOfGDgdjs_9546MerliCode_9546GDMerObjects1Objects, gdjs.MerliCode.mapOfGDgdjs_9546MerliCode_9546GDdoorObjects1Objects, false, runtimeScene, false);
 if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Up");
-}
-if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Museum", false);
 }}
 
@@ -307,9 +303,9 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene);
 if (isConditionTrue_0) {
-gdjs.copyArray(runtimeScene.getObjects("TransparentLightJoystick"), gdjs.MerliCode.GDTransparentLightJoystickObjects1);
-{for(var i = 0, len = gdjs.MerliCode.GDTransparentLightJoystickObjects1.length ;i < len;++i) {
-    gdjs.MerliCode.GDTransparentLightJoystickObjects1[i].hide(false);
+gdjs.copyArray(runtimeScene.getObjects("LineLightJoystick"), gdjs.MerliCode.GDLineLightJoystickObjects1);
+{for(var i = 0, len = gdjs.MerliCode.GDLineLightJoystickObjects1.length ;i < len;++i) {
+    gdjs.MerliCode.GDLineLightJoystickObjects1[i].hide(false);
 }
 }}
 
@@ -323,9 +319,65 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene));
 if (isConditionTrue_0) {
-gdjs.copyArray(runtimeScene.getObjects("TransparentLightJoystick"), gdjs.MerliCode.GDTransparentLightJoystickObjects1);
-{for(var i = 0, len = gdjs.MerliCode.GDTransparentLightJoystickObjects1.length ;i < len;++i) {
-    gdjs.MerliCode.GDTransparentLightJoystickObjects1[i].hide();
+gdjs.copyArray(runtimeScene.getObjects("LineLightJoystick"), gdjs.MerliCode.GDLineLightJoystickObjects1);
+{for(var i = 0, len = gdjs.MerliCode.GDLineLightJoystickObjects1.length ;i < len;++i) {
+    gdjs.MerliCode.GDLineLightJoystickObjects1[i].hide();
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Mer"), gdjs.MerliCode.GDMerObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.MerliCode.GDMerObjects1.length;i<l;++i) {
+    if ( gdjs.MerliCode.GDMerObjects1[i].getX() < gdjs.evtTools.input.getCursorX(runtimeScene, "", 0) ) {
+        isConditionTrue_0 = true;
+        gdjs.MerliCode.GDMerObjects1[k] = gdjs.MerliCode.GDMerObjects1[i];
+        ++k;
+    }
+}
+gdjs.MerliCode.GDMerObjects1.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Left", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.MerliCode.GDMerObjects1 */
+{for(var i = 0, len = gdjs.MerliCode.GDMerObjects1.length ;i < len;++i) {
+    gdjs.MerliCode.GDMerObjects1[i].getBehavior("Flippable").flipX(true);
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Mer"), gdjs.MerliCode.GDMerObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.MerliCode.GDMerObjects1.length;i<l;++i) {
+    if ( gdjs.MerliCode.GDMerObjects1[i].getX() < gdjs.evtTools.input.getCursorX(runtimeScene, "", 0) ) {
+        isConditionTrue_0 = true;
+        gdjs.MerliCode.GDMerObjects1[k] = gdjs.MerliCode.GDMerObjects1[i];
+        ++k;
+    }
+}
+gdjs.MerliCode.GDMerObjects1.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Right", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.MerliCode.GDMerObjects1 */
+{for(var i = 0, len = gdjs.MerliCode.GDMerObjects1.length ;i < len;++i) {
+    gdjs.MerliCode.GDMerObjects1[i].getBehavior("Flippable").flipX(false);
 }
 }}
 
@@ -365,8 +417,6 @@ gdjs.MerliCode.GDInicio2Objects1.length = 0;
 gdjs.MerliCode.GDInicio2Objects2.length = 0;
 gdjs.MerliCode.GDdoorObjects1.length = 0;
 gdjs.MerliCode.GDdoorObjects2.length = 0;
-gdjs.MerliCode.GDTransparentDarkJoystickObjects1.length = 0;
-gdjs.MerliCode.GDTransparentDarkJoystickObjects2.length = 0;
 gdjs.MerliCode.GDMerObjects1.length = 0;
 gdjs.MerliCode.GDMerObjects2.length = 0;
 gdjs.MerliCode.GDmuseum_9595floorObjects1.length = 0;
@@ -387,8 +437,10 @@ gdjs.MerliCode.GDtextframeObjects1.length = 0;
 gdjs.MerliCode.GDtextframeObjects2.length = 0;
 gdjs.MerliCode.GDarrowObjects1.length = 0;
 gdjs.MerliCode.GDarrowObjects2.length = 0;
-gdjs.MerliCode.GDTransparentLightJoystickObjects1.length = 0;
-gdjs.MerliCode.GDTransparentLightJoystickObjects2.length = 0;
+gdjs.MerliCode.GDLineLightJoystickObjects1.length = 0;
+gdjs.MerliCode.GDLineLightJoystickObjects2.length = 0;
+gdjs.MerliCode.GDgeneral_9595wall2Objects1.length = 0;
+gdjs.MerliCode.GDgeneral_9595wall2Objects2.length = 0;
 
 gdjs.MerliCode.eventsList0(runtimeScene);
 gdjs.MerliCode.GDCloudsObjects1.length = 0;
@@ -419,8 +471,6 @@ gdjs.MerliCode.GDInicio2Objects1.length = 0;
 gdjs.MerliCode.GDInicio2Objects2.length = 0;
 gdjs.MerliCode.GDdoorObjects1.length = 0;
 gdjs.MerliCode.GDdoorObjects2.length = 0;
-gdjs.MerliCode.GDTransparentDarkJoystickObjects1.length = 0;
-gdjs.MerliCode.GDTransparentDarkJoystickObjects2.length = 0;
 gdjs.MerliCode.GDMerObjects1.length = 0;
 gdjs.MerliCode.GDMerObjects2.length = 0;
 gdjs.MerliCode.GDmuseum_9595floorObjects1.length = 0;
@@ -441,8 +491,10 @@ gdjs.MerliCode.GDtextframeObjects1.length = 0;
 gdjs.MerliCode.GDtextframeObjects2.length = 0;
 gdjs.MerliCode.GDarrowObjects1.length = 0;
 gdjs.MerliCode.GDarrowObjects2.length = 0;
-gdjs.MerliCode.GDTransparentLightJoystickObjects1.length = 0;
-gdjs.MerliCode.GDTransparentLightJoystickObjects2.length = 0;
+gdjs.MerliCode.GDLineLightJoystickObjects1.length = 0;
+gdjs.MerliCode.GDLineLightJoystickObjects2.length = 0;
+gdjs.MerliCode.GDgeneral_9595wall2Objects1.length = 0;
+gdjs.MerliCode.GDgeneral_9595wall2Objects2.length = 0;
 
 
 return;

@@ -72,8 +72,10 @@ gdjs.HallCode.GDtextframeObjects1= [];
 gdjs.HallCode.GDtextframeObjects2= [];
 gdjs.HallCode.GDarrowObjects1= [];
 gdjs.HallCode.GDarrowObjects2= [];
-gdjs.HallCode.GDTransparentLightJoystickObjects1= [];
-gdjs.HallCode.GDTransparentLightJoystickObjects2= [];
+gdjs.HallCode.GDLineLightJoystickObjects1= [];
+gdjs.HallCode.GDLineLightJoystickObjects2= [];
+gdjs.HallCode.GDgeneral_9595wall2Objects1= [];
+gdjs.HallCode.GDgeneral_9595wall2Objects2= [];
 
 
 gdjs.HallCode.mapOfGDgdjs_9546HallCode_9546GDMerObjects1Objects = Hashtable.newFrom({"Mer": gdjs.HallCode.GDMerObjects1});
@@ -1015,11 +1017,11 @@ gdjs.copyArray(runtimeScene.getObjects("second_text"), gdjs.HallCode.GDsecond_95
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = !(gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene));
+isConditionTrue_0 = gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene);
 if (isConditionTrue_0) {
-gdjs.copyArray(runtimeScene.getObjects("TransparentLightJoystick"), gdjs.HallCode.GDTransparentLightJoystickObjects1);
-{for(var i = 0, len = gdjs.HallCode.GDTransparentLightJoystickObjects1.length ;i < len;++i) {
-    gdjs.HallCode.GDTransparentLightJoystickObjects1[i].hide();
+gdjs.copyArray(runtimeScene.getObjects("LineLightJoystick"), gdjs.HallCode.GDLineLightJoystickObjects1);
+{for(var i = 0, len = gdjs.HallCode.GDLineLightJoystickObjects1.length ;i < len;++i) {
+    gdjs.HallCode.GDLineLightJoystickObjects1[i].hide(false);
 }
 }}
 
@@ -1031,11 +1033,67 @@ gdjs.copyArray(runtimeScene.getObjects("TransparentLightJoystick"), gdjs.HallCod
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene);
+isConditionTrue_0 = !(gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene));
 if (isConditionTrue_0) {
-gdjs.copyArray(runtimeScene.getObjects("TransparentLightJoystick"), gdjs.HallCode.GDTransparentLightJoystickObjects1);
-{for(var i = 0, len = gdjs.HallCode.GDTransparentLightJoystickObjects1.length ;i < len;++i) {
-    gdjs.HallCode.GDTransparentLightJoystickObjects1[i].hide(false);
+gdjs.copyArray(runtimeScene.getObjects("LineLightJoystick"), gdjs.HallCode.GDLineLightJoystickObjects1);
+{for(var i = 0, len = gdjs.HallCode.GDLineLightJoystickObjects1.length ;i < len;++i) {
+    gdjs.HallCode.GDLineLightJoystickObjects1[i].hide();
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Mer"), gdjs.HallCode.GDMerObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.HallCode.GDMerObjects1.length;i<l;++i) {
+    if ( gdjs.HallCode.GDMerObjects1[i].getX() < gdjs.evtTools.input.getCursorX(runtimeScene, "", 0) ) {
+        isConditionTrue_0 = true;
+        gdjs.HallCode.GDMerObjects1[k] = gdjs.HallCode.GDMerObjects1[i];
+        ++k;
+    }
+}
+gdjs.HallCode.GDMerObjects1.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Left", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.HallCode.GDMerObjects1 */
+{for(var i = 0, len = gdjs.HallCode.GDMerObjects1.length ;i < len;++i) {
+    gdjs.HallCode.GDMerObjects1[i].getBehavior("Flippable").flipX(true);
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Mer"), gdjs.HallCode.GDMerObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.HallCode.GDMerObjects1.length;i<l;++i) {
+    if ( gdjs.HallCode.GDMerObjects1[i].getX() < gdjs.evtTools.input.getCursorX(runtimeScene, "", 0) ) {
+        isConditionTrue_0 = true;
+        gdjs.HallCode.GDMerObjects1[k] = gdjs.HallCode.GDMerObjects1[i];
+        ++k;
+    }
+}
+gdjs.HallCode.GDMerObjects1.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Right", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.HallCode.GDMerObjects1 */
+{for(var i = 0, len = gdjs.HallCode.GDMerObjects1.length ;i < len;++i) {
+    gdjs.HallCode.GDMerObjects1[i].getBehavior("Flippable").flipX(false);
 }
 }}
 
@@ -1119,8 +1177,10 @@ gdjs.HallCode.GDtextframeObjects1.length = 0;
 gdjs.HallCode.GDtextframeObjects2.length = 0;
 gdjs.HallCode.GDarrowObjects1.length = 0;
 gdjs.HallCode.GDarrowObjects2.length = 0;
-gdjs.HallCode.GDTransparentLightJoystickObjects1.length = 0;
-gdjs.HallCode.GDTransparentLightJoystickObjects2.length = 0;
+gdjs.HallCode.GDLineLightJoystickObjects1.length = 0;
+gdjs.HallCode.GDLineLightJoystickObjects2.length = 0;
+gdjs.HallCode.GDgeneral_9595wall2Objects1.length = 0;
+gdjs.HallCode.GDgeneral_9595wall2Objects2.length = 0;
 
 gdjs.HallCode.eventsList0(runtimeScene);
 gdjs.HallCode.GDhallObjects1.length = 0;
@@ -1195,8 +1255,10 @@ gdjs.HallCode.GDtextframeObjects1.length = 0;
 gdjs.HallCode.GDtextframeObjects2.length = 0;
 gdjs.HallCode.GDarrowObjects1.length = 0;
 gdjs.HallCode.GDarrowObjects2.length = 0;
-gdjs.HallCode.GDTransparentLightJoystickObjects1.length = 0;
-gdjs.HallCode.GDTransparentLightJoystickObjects2.length = 0;
+gdjs.HallCode.GDLineLightJoystickObjects1.length = 0;
+gdjs.HallCode.GDLineLightJoystickObjects2.length = 0;
+gdjs.HallCode.GDgeneral_9595wall2Objects1.length = 0;
+gdjs.HallCode.GDgeneral_9595wall2Objects2.length = 0;
 
 
 return;

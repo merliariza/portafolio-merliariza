@@ -94,12 +94,14 @@ gdjs.MuseumCode.GDtextframeObjects1= [];
 gdjs.MuseumCode.GDtextframeObjects2= [];
 gdjs.MuseumCode.GDarrowObjects1= [];
 gdjs.MuseumCode.GDarrowObjects2= [];
-gdjs.MuseumCode.GDTransparentLightJoystickObjects1= [];
-gdjs.MuseumCode.GDTransparentLightJoystickObjects2= [];
+gdjs.MuseumCode.GDLineLightJoystickObjects1= [];
+gdjs.MuseumCode.GDLineLightJoystickObjects2= [];
+gdjs.MuseumCode.GDgeneral_9595wall2Objects1= [];
+gdjs.MuseumCode.GDgeneral_9595wall2Objects2= [];
 
 
 gdjs.MuseumCode.mapOfGDgdjs_9546MuseumCode_9546GDMerObjects1Objects = Hashtable.newFrom({"Mer": gdjs.MuseumCode.GDMerObjects1});
-gdjs.MuseumCode.mapOfGDgdjs_9546MuseumCode_9546GDwallObjects1Objects = Hashtable.newFrom({"wall": gdjs.MuseumCode.GDwallObjects1});
+gdjs.MuseumCode.mapOfGDgdjs_9546MuseumCode_9546GDgeneral_95959595wall2Objects1Objects = Hashtable.newFrom({"general_wall2": gdjs.MuseumCode.GDgeneral_9595wall2Objects1});
 gdjs.MuseumCode.mapOfGDgdjs_9546MuseumCode_9546GDwallObjects1Objects = Hashtable.newFrom({"wall": gdjs.MuseumCode.GDwallObjects1});
 gdjs.MuseumCode.mapOfGDgdjs_9546MuseumCode_9546GDMerObjects1Objects = Hashtable.newFrom({"Mer": gdjs.MuseumCode.GDMerObjects1});
 gdjs.MuseumCode.mapOfGDgdjs_9546MuseumCode_9546GDportalObjects1Objects = Hashtable.newFrom({"portal": gdjs.MuseumCode.GDportalObjects1});
@@ -160,14 +162,14 @@ gdjs.MuseumCode.eventsList0 = function(runtimeScene) {
 {
 
 gdjs.copyArray(runtimeScene.getObjects("Mer"), gdjs.MuseumCode.GDMerObjects1);
-gdjs.copyArray(runtimeScene.getObjects("wall"), gdjs.MuseumCode.GDwallObjects1);
+gdjs.copyArray(runtimeScene.getObjects("general_wall2"), gdjs.MuseumCode.GDgeneral_9595wall2Objects1);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.MuseumCode.mapOfGDgdjs_9546MuseumCode_9546GDMerObjects1Objects, gdjs.MuseumCode.mapOfGDgdjs_9546MuseumCode_9546GDwallObjects1Objects, false, runtimeScene, false);
+isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.MuseumCode.mapOfGDgdjs_9546MuseumCode_9546GDMerObjects1Objects, gdjs.MuseumCode.mapOfGDgdjs_9546MuseumCode_9546GDgeneral_95959595wall2Objects1Objects, false, runtimeScene, false);
 if (isConditionTrue_0) {
 /* Reuse gdjs.MuseumCode.GDMerObjects1 */
-/* Reuse gdjs.MuseumCode.GDwallObjects1 */
+gdjs.copyArray(runtimeScene.getObjects("wall"), gdjs.MuseumCode.GDwallObjects1);
 {for(var i = 0, len = gdjs.MuseumCode.GDMerObjects1.length ;i < len;++i) {
     gdjs.MuseumCode.GDMerObjects1[i].separateFromObjectsList(gdjs.MuseumCode.mapOfGDgdjs_9546MuseumCode_9546GDwallObjects1Objects, false);
 }
@@ -264,10 +266,6 @@ gdjs.copyArray(runtimeScene.getObjects("portal"), gdjs.MuseumCode.GDportalObject
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.MuseumCode.mapOfGDgdjs_9546MuseumCode_9546GDMerObjects1Objects, gdjs.MuseumCode.mapOfGDgdjs_9546MuseumCode_9546GDportalObjects1Objects, false, runtimeScene, false);
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.input.isKeyPressed(runtimeScene, "Down");
-}
 if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Merli", false);
 }}
@@ -1231,9 +1229,9 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene);
 if (isConditionTrue_0) {
-gdjs.copyArray(runtimeScene.getObjects("TransparentLightJoystick"), gdjs.MuseumCode.GDTransparentLightJoystickObjects1);
-{for(var i = 0, len = gdjs.MuseumCode.GDTransparentLightJoystickObjects1.length ;i < len;++i) {
-    gdjs.MuseumCode.GDTransparentLightJoystickObjects1[i].hide(false);
+gdjs.copyArray(runtimeScene.getObjects("LineLightJoystick"), gdjs.MuseumCode.GDLineLightJoystickObjects1);
+{for(var i = 0, len = gdjs.MuseumCode.GDLineLightJoystickObjects1.length ;i < len;++i) {
+    gdjs.MuseumCode.GDLineLightJoystickObjects1[i].hide(false);
 }
 }}
 
@@ -1247,9 +1245,65 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = !(gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene));
 if (isConditionTrue_0) {
-gdjs.copyArray(runtimeScene.getObjects("TransparentLightJoystick"), gdjs.MuseumCode.GDTransparentLightJoystickObjects1);
-{for(var i = 0, len = gdjs.MuseumCode.GDTransparentLightJoystickObjects1.length ;i < len;++i) {
-    gdjs.MuseumCode.GDTransparentLightJoystickObjects1[i].hide();
+gdjs.copyArray(runtimeScene.getObjects("LineLightJoystick"), gdjs.MuseumCode.GDLineLightJoystickObjects1);
+{for(var i = 0, len = gdjs.MuseumCode.GDLineLightJoystickObjects1.length ;i < len;++i) {
+    gdjs.MuseumCode.GDLineLightJoystickObjects1[i].hide();
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Mer"), gdjs.MuseumCode.GDMerObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.MuseumCode.GDMerObjects1.length;i<l;++i) {
+    if ( gdjs.MuseumCode.GDMerObjects1[i].getX() < gdjs.evtTools.input.getCursorX(runtimeScene, "", 0) ) {
+        isConditionTrue_0 = true;
+        gdjs.MuseumCode.GDMerObjects1[k] = gdjs.MuseumCode.GDMerObjects1[i];
+        ++k;
+    }
+}
+gdjs.MuseumCode.GDMerObjects1.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Left", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.MuseumCode.GDMerObjects1 */
+{for(var i = 0, len = gdjs.MuseumCode.GDMerObjects1.length ;i < len;++i) {
+    gdjs.MuseumCode.GDMerObjects1[i].getBehavior("Flippable").flipX(true);
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Mer"), gdjs.MuseumCode.GDMerObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.MuseumCode.GDMerObjects1.length;i<l;++i) {
+    if ( gdjs.MuseumCode.GDMerObjects1[i].getX() < gdjs.evtTools.input.getCursorX(runtimeScene, "", 0) ) {
+        isConditionTrue_0 = true;
+        gdjs.MuseumCode.GDMerObjects1[k] = gdjs.MuseumCode.GDMerObjects1[i];
+        ++k;
+    }
+}
+gdjs.MuseumCode.GDMerObjects1.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Right", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.MuseumCode.GDMerObjects1 */
+{for(var i = 0, len = gdjs.MuseumCode.GDMerObjects1.length ;i < len;++i) {
+    gdjs.MuseumCode.GDMerObjects1[i].getBehavior("Flippable").flipX(false);
 }
 }}
 
@@ -1355,8 +1409,10 @@ gdjs.MuseumCode.GDtextframeObjects1.length = 0;
 gdjs.MuseumCode.GDtextframeObjects2.length = 0;
 gdjs.MuseumCode.GDarrowObjects1.length = 0;
 gdjs.MuseumCode.GDarrowObjects2.length = 0;
-gdjs.MuseumCode.GDTransparentLightJoystickObjects1.length = 0;
-gdjs.MuseumCode.GDTransparentLightJoystickObjects2.length = 0;
+gdjs.MuseumCode.GDLineLightJoystickObjects1.length = 0;
+gdjs.MuseumCode.GDLineLightJoystickObjects2.length = 0;
+gdjs.MuseumCode.GDgeneral_9595wall2Objects1.length = 0;
+gdjs.MuseumCode.GDgeneral_9595wall2Objects2.length = 0;
 
 gdjs.MuseumCode.eventsList0(runtimeScene);
 gdjs.MuseumCode.GDwallObjects1.length = 0;
@@ -1453,8 +1509,10 @@ gdjs.MuseumCode.GDtextframeObjects1.length = 0;
 gdjs.MuseumCode.GDtextframeObjects2.length = 0;
 gdjs.MuseumCode.GDarrowObjects1.length = 0;
 gdjs.MuseumCode.GDarrowObjects2.length = 0;
-gdjs.MuseumCode.GDTransparentLightJoystickObjects1.length = 0;
-gdjs.MuseumCode.GDTransparentLightJoystickObjects2.length = 0;
+gdjs.MuseumCode.GDLineLightJoystickObjects1.length = 0;
+gdjs.MuseumCode.GDLineLightJoystickObjects2.length = 0;
+gdjs.MuseumCode.GDgeneral_9595wall2Objects1.length = 0;
+gdjs.MuseumCode.GDgeneral_9595wall2Objects2.length = 0;
 
 
 return;

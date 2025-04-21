@@ -42,8 +42,10 @@ gdjs.finalCode.GDtextframeObjects1= [];
 gdjs.finalCode.GDtextframeObjects2= [];
 gdjs.finalCode.GDarrowObjects1= [];
 gdjs.finalCode.GDarrowObjects2= [];
-gdjs.finalCode.GDTransparentLightJoystickObjects1= [];
-gdjs.finalCode.GDTransparentLightJoystickObjects2= [];
+gdjs.finalCode.GDLineLightJoystickObjects1= [];
+gdjs.finalCode.GDLineLightJoystickObjects2= [];
+gdjs.finalCode.GDgeneral_9595wall2Objects1= [];
+gdjs.finalCode.GDgeneral_9595wall2Objects2= [];
 
 
 gdjs.finalCode.mapOfGDgdjs_9546finalCode_9546GDMerObjects1Objects = Hashtable.newFrom({"Mer": gdjs.finalCode.GDMerObjects1});
@@ -393,11 +395,11 @@ gdjs.copyArray(runtimeScene.getObjects("textframe"), gdjs.finalCode.GDtextframeO
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = !(gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene));
+isConditionTrue_0 = gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene);
 if (isConditionTrue_0) {
-gdjs.copyArray(runtimeScene.getObjects("TransparentLightJoystick"), gdjs.finalCode.GDTransparentLightJoystickObjects1);
-{for(var i = 0, len = gdjs.finalCode.GDTransparentLightJoystickObjects1.length ;i < len;++i) {
-    gdjs.finalCode.GDTransparentLightJoystickObjects1[i].hide();
+gdjs.copyArray(runtimeScene.getObjects("LineLightJoystick"), gdjs.finalCode.GDLineLightJoystickObjects1);
+{for(var i = 0, len = gdjs.finalCode.GDLineLightJoystickObjects1.length ;i < len;++i) {
+    gdjs.finalCode.GDLineLightJoystickObjects1[i].hide(false);
 }
 }}
 
@@ -409,11 +411,67 @@ gdjs.copyArray(runtimeScene.getObjects("TransparentLightJoystick"), gdjs.finalCo
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene);
+isConditionTrue_0 = !(gdjs.evtTools.systemInfo.hasTouchScreen(runtimeScene));
 if (isConditionTrue_0) {
-gdjs.copyArray(runtimeScene.getObjects("TransparentLightJoystick"), gdjs.finalCode.GDTransparentLightJoystickObjects1);
-{for(var i = 0, len = gdjs.finalCode.GDTransparentLightJoystickObjects1.length ;i < len;++i) {
-    gdjs.finalCode.GDTransparentLightJoystickObjects1[i].hide(false);
+gdjs.copyArray(runtimeScene.getObjects("LineLightJoystick"), gdjs.finalCode.GDLineLightJoystickObjects1);
+{for(var i = 0, len = gdjs.finalCode.GDLineLightJoystickObjects1.length ;i < len;++i) {
+    gdjs.finalCode.GDLineLightJoystickObjects1[i].hide();
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Mer"), gdjs.finalCode.GDMerObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.finalCode.GDMerObjects1.length;i<l;++i) {
+    if ( gdjs.finalCode.GDMerObjects1[i].getX() < gdjs.evtTools.input.getCursorX(runtimeScene, "", 0) ) {
+        isConditionTrue_0 = true;
+        gdjs.finalCode.GDMerObjects1[k] = gdjs.finalCode.GDMerObjects1[i];
+        ++k;
+    }
+}
+gdjs.finalCode.GDMerObjects1.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Left", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.finalCode.GDMerObjects1 */
+{for(var i = 0, len = gdjs.finalCode.GDMerObjects1.length ;i < len;++i) {
+    gdjs.finalCode.GDMerObjects1[i].getBehavior("Flippable").flipX(true);
+}
+}}
+
+}
+
+
+{
+
+gdjs.copyArray(runtimeScene.getObjects("Mer"), gdjs.finalCode.GDMerObjects1);
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+for (var i = 0, k = 0, l = gdjs.finalCode.GDMerObjects1.length;i<l;++i) {
+    if ( gdjs.finalCode.GDMerObjects1[i].getX() < gdjs.evtTools.input.getCursorX(runtimeScene, "", 0) ) {
+        isConditionTrue_0 = true;
+        gdjs.finalCode.GDMerObjects1[k] = gdjs.finalCode.GDMerObjects1[i];
+        ++k;
+    }
+}
+gdjs.finalCode.GDMerObjects1.length = k;
+if (isConditionTrue_0) {
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtsExt__SpriteMultitouchJoystick__IsDirectionPushed4Way.func(runtimeScene, 1, "Primary", "Right", (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
+}
+if (isConditionTrue_0) {
+/* Reuse gdjs.finalCode.GDMerObjects1 */
+{for(var i = 0, len = gdjs.finalCode.GDMerObjects1.length ;i < len;++i) {
+    gdjs.finalCode.GDMerObjects1[i].getBehavior("Flippable").flipX(false);
 }
 }}
 
@@ -467,8 +525,10 @@ gdjs.finalCode.GDtextframeObjects1.length = 0;
 gdjs.finalCode.GDtextframeObjects2.length = 0;
 gdjs.finalCode.GDarrowObjects1.length = 0;
 gdjs.finalCode.GDarrowObjects2.length = 0;
-gdjs.finalCode.GDTransparentLightJoystickObjects1.length = 0;
-gdjs.finalCode.GDTransparentLightJoystickObjects2.length = 0;
+gdjs.finalCode.GDLineLightJoystickObjects1.length = 0;
+gdjs.finalCode.GDLineLightJoystickObjects2.length = 0;
+gdjs.finalCode.GDgeneral_9595wall2Objects1.length = 0;
+gdjs.finalCode.GDgeneral_9595wall2Objects2.length = 0;
 
 gdjs.finalCode.eventsList0(runtimeScene);
 gdjs.finalCode.GDlagoObjects1.length = 0;
@@ -513,8 +573,10 @@ gdjs.finalCode.GDtextframeObjects1.length = 0;
 gdjs.finalCode.GDtextframeObjects2.length = 0;
 gdjs.finalCode.GDarrowObjects1.length = 0;
 gdjs.finalCode.GDarrowObjects2.length = 0;
-gdjs.finalCode.GDTransparentLightJoystickObjects1.length = 0;
-gdjs.finalCode.GDTransparentLightJoystickObjects2.length = 0;
+gdjs.finalCode.GDLineLightJoystickObjects1.length = 0;
+gdjs.finalCode.GDLineLightJoystickObjects2.length = 0;
+gdjs.finalCode.GDgeneral_9595wall2Objects1.length = 0;
+gdjs.finalCode.GDgeneral_9595wall2Objects2.length = 0;
 
 
 return;
